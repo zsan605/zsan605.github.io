@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>数组中的重复数字 | 自由之路</title>
+  <title>平方之和 | 自由之路</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述在一个长度为 n 的数组里的所有数字都在 0 到 n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字是重复的，也不知道每个数字重复几次。请找出数组中任意一个重复的数字。">
+  <meta name="description" content="题目描述给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a*a + b*b &#x3D; c 。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数组中的重复数字">
-<meta property="og:url" content="http://yoursite.com/2020/10/13/repeat-number-in-array/index.html">
+<meta property="og:title" content="平方之和">
+<meta property="og:url" content="http://yoursite.com/2020/10/15/judge-square-sum/index.html">
 <meta property="og:site_name" content="自由之路">
-<meta property="og:description" content="题目描述在一个长度为 n 的数组里的所有数字都在 0 到 n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字是重复的，也不知道每个数字重复几次。请找出数组中任意一个重复的数字。">
+<meta property="og:description" content="题目描述给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a*a + b*b &#x3D; c 。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-13T09:47:17.000Z">
-<meta property="article:modified_time" content="2020-10-15T09:21:52.207Z">
+<meta property="article:published_time" content="2020-10-15T10:04:22.000Z">
+<meta property="article:modified_time" content="2020-10-15T11:25:53.637Z">
 <meta property="article:author" content="zsan605">
 <meta property="article:tag" content="算法">
-<meta property="article:tag" content="数组">
 <meta property="article:tag" content="查找">
 <meta property="article:tag" content="双指针">
 <meta name="twitter:card" content="summary">
@@ -152,39 +151,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-repeat-number-in-array" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-judge-square-sum" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数组中的重复数字
+      平方之和
     </h1>
   
 
         
-        <a href="/2020/10/13/repeat-number-in-array/" class="archive-article-date">
-  	<time datetime="2020-10-13T09:47:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-13</time>
+        <a href="/2020/10/15/judge-square-sum/" class="archive-article-date">
+  	<time datetime="2020-10-15T10:04:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>在一个长度为 n 的数组里的所有数字都在 0 到 n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字是重复的，也不知道每个数字重复几次。请找出数组中任意一个重复的数字。</p>
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a*a + b*b = c 。</p>
 <a id="more"></a>
-<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;2, 3, 1, 0, 2, 5&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure>
-<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>时间复杂度 O(N)，空间复杂度 O(1)</p>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">输入：c &#x3D; 5</span><br><span class="line">输出：true</span><br><span class="line">解释：1 * 1 + 2 * 2 &#x3D; 5</span><br><span class="line"></span><br><span class="line">输入：c &#x3D; 3</span><br><span class="line">输出：false</span><br><span class="line"></span><br><span class="line">输入：c &#x3D; 4</span><br><span class="line">输出：true</span><br><span class="line"></span><br><span class="line">输入：c &#x3D; 2</span><br><span class="line">输出：true</span><br><span class="line"></span><br><span class="line">输入：c &#x3D; 1</span><br><span class="line">输出：true</span><br></pre></td></tr></table></figure>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 &lt;&#x3D; c &lt;&#x3D; 231 - 1</span><br></pre></td></tr></table></figure>
 <h2 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h2><h3 id="关键信息"><a href="#关键信息" class="headerlink" title="关键信息"></a>关键信息</h3><ul>
-<li>数组长度为 n</li>
-<li>数组元素范围 0到n-1</li>
+<li>整数c非负</li>
+<li>a*a + b*b = c</li>
 </ul>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>对于 [0, n-1] 范围的数组，可以将值为 i 的元素调整到第 i 个位置上求解。</p>
-<p>由于本题查找重复数字，则在调整过程中，如果i位置已经为i的话，则证明i为重复数字。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">repeatNumberInArray</span><span class="params">(arr []<span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(arr) &lt;= <span class="number">1</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> i, _ := <span class="keyword">range</span> arr &#123;</span><br><span class="line">		<span class="keyword">for</span> arr[i] != i &#123;</span><br><span class="line">			<span class="keyword">if</span> arr[i] == arr[arr[i]] &#123;</span><br><span class="line">				<span class="keyword">return</span> arr[i]</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			arr[i], arr[arr[i]] = arr[arr[i]], arr[i]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestRepeatNumberInArray</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	arr := []<span class="keyword">int</span>&#123;<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">5</span>&#125;</span><br><span class="line">	arr1 := []<span class="keyword">int</span>&#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">5</span>&#125;</span><br><span class="line">	arr2 := []<span class="keyword">int</span>&#123;<span class="number">3</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>&#125;</span><br><span class="line">	assert.True(t, repeatNumberInArray(arr) == <span class="number">2</span>)</span><br><span class="line">	assert.True(t, repeatNumberInArray(arr1) == <span class="number">2</span>)</span><br><span class="line">	assert.True(t, repeatNumberInArray(arr2) == <span class="number">-1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>根据题目信息有以下理解：</p>
+<ul>
+<li>由于负正数的平方和正整数的平方一样，故不考虑负数</li>
+<li>可以理解为在0~n的数组之间取一两个数a,b，使得a*a+b*b = c</li>
+</ul>
+<p>这样解法就类似 <a href="https://zsan605.github.io/2020/10/15/two-sum/" target="_blank" rel="noopener">两数之和 II - 输入有序数组</a> </p>
+<p>由于c可以由 0*0 + b*b 计算获得。则a,b的最小值为0, 最大值为 c 的 平方根向下取整得max。</p>
+<p>然后使用双指针来遍历,a从0开始递增，b从max开始递减，直至相遇，遍历过程如下</p>
+<ul>
+<li>如果a*a+b*b大于c, b递减</li>
+<li>如果a*a+b*b小于c, a递增</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">judgeSquareSum</span><span class="params">(c <span class="keyword">int</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line"></span><br><span class="line">	a, b := <span class="number">0</span>, <span class="keyword">int</span>(math.Sqrt(<span class="keyword">float64</span>(c)))</span><br><span class="line"></span><br><span class="line">	target := <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> a &lt;= b &#123;</span><br><span class="line">		target = a*a + b*b</span><br><span class="line">		<span class="keyword">if</span> c == target &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">		&#125; <span class="keyword">else</span> <span class="keyword">if</span> target &gt; c &#123;</span><br><span class="line">			j--</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			i++</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">TestJudgeSquareSum</span><span class="params">(t *testing.T)</span></span> &#123;</span><br><span class="line">	assert.True(t, judgeSquareSum(<span class="number">5</span>))</span><br><span class="line">	assert.True(t, judgeSquareSum(<span class="number">4</span>))</span><br><span class="line">	assert.False(t, judgeSquareSum(<span class="number">3</span>))</span><br><span class="line">	assert.True(t, judgeSquareSum(<span class="number">2</span>))</span><br><span class="line">	assert.True(t, judgeSquareSum(<span class="number">1</span>))</span><br><span class="line">	assert.False(t, judgeSquareSum(<span class="number">2147482647</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -201,10 +208,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -279,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/13/repeat-number-in-array/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/15/judge-square-sum/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,15 +296,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/14/find-number-from-matrix/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          矩阵中的查找
-        
-      </div>
-    </a>
   
+    <a href="/2020/10/15/two-sum/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">两数之和 II - 输入有序数组</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
